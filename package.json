@@ -1,0 +1,13 @@
+{
+  "name": "nodejs-redis-example",
+  "version": "0.0.1",
+  "description": "A simple http server with counter stored in Redis",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "redis": "*",
+    "ip": "*",
+    "ip-address": "*"
+  }
+}

@@ -67,7 +67,7 @@ var server = http.createServer(function(request, response) {
 
 
     response.writeHead(200, {
-        "Content-Type": "text/plain"
+        "Content-Type": "text/html"
     });
 
     var total_requests;
@@ -80,6 +80,10 @@ var server = http.createServer(function(request, response) {
     redis_client.hgetall("ip", function(err, reply) {
         // This is the last reply, so all of the previous replies must have completed already
         response.write(
+            "<html><head><title>node-redis-example</title>" +
+            "<style>body { background-color: lightgreen; }</style>" +
+            "</head>" +
+            "<body><pre>" +
             "Total requests: " + total_requests + "\n\n" +
             "My IP: " + ip.address() + "\n\n" +
             "Remote IP count: \n");

@@ -4,6 +4,7 @@
 //
 
 var http = require('http'),
+    os = require("os"),
     ip = require("ip"),
     v6 = require('ip-address').v6;
 
@@ -81,7 +82,9 @@ var server = http.createServer(function(request, response) {
         // This is the last reply, so all of the previous replies must have completed already
         response.write(
             "Total requests: " + total_requests + "\n\n" +
-            "My IP: " + ip.address() + "\n\n" +
+            "App server:\n" +
+            "  - hostname: " + os.hostname() + "\n" +
+            "  - IP: " + ip.address() + "\n\n" +
             "Remote IP count: \n");
         Object.keys(reply).forEach(function(ip) {
             response.write("    " + ip + ": " + reply[ip] + "\n");

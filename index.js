@@ -4,6 +4,7 @@
 //
 
 var http = require('http'),
+    os = require("os"),
     ip = require("ip"),
     v6 = require('ip-address').v6;
 
@@ -36,7 +37,7 @@ function to_ipv4(ipString) {
     if (! address.isValid()) {
         return ipString;
     }
- 
+
     var teredo = address.teredo();
     return teredo.client4;
 }
@@ -85,7 +86,9 @@ var server = http.createServer(function(request, response) {
             "</head>" +
             "<body><pre>" +
             "Total requests: " + total_requests + "\n\n" +
-            "My IP: " + ip.address() + "\n\n" +
+            "App server:\n" +
+            "  - hostname: " + os.hostname() + "\n" +
+            "  - IP: " + ip.address() + "\n\n" +
             "Remote IP count: \n");
         Object.keys(reply).forEach(function(ip) {
             response.write("    " + ip + ": " + reply[ip] + "\n");

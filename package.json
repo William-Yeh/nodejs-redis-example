@@ -2,6 +2,10 @@
   "name": "nodejs-redis-example",
   "version": "0.0.1",
   "description": "A simple http server with counter stored in Redis",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/William-Yeh/nodejs-redis-example.git"
+  },
   "scripts": {
     "start": "node index.js"
   },

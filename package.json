@@ -6,6 +6,7 @@
     "type": "git",
     "url": "git://github.com/William-Yeh/nodejs-redis-example.git"
   },
+  "license": "MIT",
   "scripts": {
     "start": "node index.js"
   },

@@ -88,11 +88,12 @@ var server = http.createServer(function(request, response) {
             "Total requests: " + total_requests + "\n\n" +
             "App server:\n" +
             "  - hostname: " + os.hostname() + "\n" +
-            "  - IP: " + ip.address() + "\n\n" +
-            "Remote IP count: \n");
-        Object.keys(reply).forEach(function(ip) {
-            response.write("    " + ip + ": " + reply[ip] + "\n");
-        });
+        "");
+    //      "  - IP: " + ip.address() + "\n\n" +
+    //      "Remote IP count: \n");
+    //  Object.keys(reply).forEach(function(ip) {
+    //      response.write("    " + ip + ": " + reply[ip] + "\n");
+    //  });
         response.end();
     });
 
